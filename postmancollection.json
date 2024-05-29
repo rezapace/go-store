@@ -1,0 +1,274 @@
+{
+  "info": {
+    "name": "My API Collection",
+    "description": "Collection of API requests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["orders"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"products\": [\n      {\n        \"product_id\": \"product-uuid-1\",\n        \"quantity\": 2\n      },\n      {\n        \"product_id\": \"product-uuid-2\",\n        \"quantity\": 1\n      }\n    ],\n    \"address\": \"123 Main St\",\n    \"cart\": true,\n    \"coin\": false\n  }"
+        }
+      }
+    },
+    {
+      "name": "Get Orders",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["orders"],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "",
+              "description": "optional"
+            },
+            {
+              "key": "status",
+              "value": "",
+              "description": "optional"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/addresses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["addresses"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"profile_id\": 1,\n    \"address\": \"123 Main St\",\n    \"city\": \"CityName\",\n    \"province\": \"ProvinceName\"\n  }"
+        }
+      }
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["products"],
+          "query": [
+            {
+              "key": "status",
+              "value": "",
+              "description": "optional"
+            },
+            {
+              "key": "keyword",
+              "value": "",
+              "description": "optional"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add to Cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/cart",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["cart"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"product_id\": \"product-uuid-1\",\n    \"quantity\": 2\n  }"
+        }
+      }
+    },
+    {
+      "name": "Get Cart",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/cart",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["cart"]
+        }
+      }
+    },
+    {
+      "name": "Update Cart Quantity",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/cart/{id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["cart", "{id}"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"quantity\": 3\n  }"
+        }
+      }
+    },
+    {
+      "name": "Delete Cart Item",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/cart/{id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["cart", "{id}"]
+        }
+      }
+    },
+    {
+      "name": "Get Notifications",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/notifications",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notifications"]
+        }
+      }
+    },
+    {
+      "name": "Update Notification Status",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/notifications/{id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notifications", "{id}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Notification",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/notifications/{id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notifications", "{id}"]
+        }
+      }
+    }
+  ]
+}
