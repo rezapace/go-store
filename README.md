@@ -38,5 +38,9 @@ Proyek ini adalah backend yang dibangun menggunakan bahasa pemrograman Go (Golan
 4. Push ke branch (`git push origin fitur-baru`)
 5. Buat Pull Request
 
+## Dokumentasi
+- [Postman](postman.md)
+
 ## Lisensi
+
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).
