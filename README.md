@@ -21,8 +21,9 @@ Proyek ini adalah backend yang dibangun menggunakan bahasa pemrograman Go (Golan
     ```
 3. Instal dependensi:
     ```bash
-    go mod download
+    go mod tidy
     ```
+
 
 ## Penggunaan
 1. Jalankan server:
